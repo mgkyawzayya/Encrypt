@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
-import {StyleSheet, StatusBar, SafeAreaView, ScrollView} from 'react-native';
-import {Layout, Input, Button, Text, View} from '@ui-kitten/components';
+import {StyleSheet, SafeAreaView, ScrollView} from 'react-native';
+import {Layout, Input, Button, Text} from '@ui-kitten/components';
 import Clipboard from '@react-native-clipboard/clipboard';
 
 var CryptoJS = require('crypto-js');
@@ -8,7 +8,6 @@ var CryptoJS = require('crypto-js');
 export default function EncryptComponent() {
   const [value, setValue] = useState('');
   const [planetext, setPlaneText] = useState('');
-  const [text, setText] = useState('');
   const [copiedText, setCopiedText] = useState('');
 
   const encryptData = () => {
@@ -39,7 +38,7 @@ export default function EncryptComponent() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <ScrollView style={styles.scrollView}>
+      <ScrollView style={styles.scrollView} keyboardShouldPersistTaps="handled">
         <Layout style={styles.container1}>
           <Input
             style={styles.input}
